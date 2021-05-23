@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+<div class="col-md-2">
+
+</div>
+<div class="card border-dark bg-light col-md-8 mb-3">
+  <h4 class="card-header border-dark"><strong><%= @covid_center.hospital %></strong></h4>
+  <div class="card-body">
+    <h5 class="card-title"><strong>District:</strong><%= @covid_center.district %></h5>
+    <p><strong>Center Type:</strong> <%= @covid_center.center %></p>
+    <p class="card-text"><strong>Helpline:</strong> <%= @covid_center.helpline %></p>
+    <p><strong>Maplink:</strong> <%= link_to @covid_center.maplink,@covid_center.maplink,target: '_blank'  %></p>
+  </div>
+  <div class="card-footer bg-transparent border-dark">
+    <span><%= link_to 'Back', covid_centers_path ,class:"btn btn-success"%></span</div>
+  </div>
+</div>
+

@@ -1,0 +1,40 @@
+<div class="nav-bg">
+<nav class="navbar navbar-expand-lg  bg-light py-0 sticky-top" >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="bg-green py-2"><%= link_to "COVID CENTERS" ,covid_centers_path ,class:"navbar-brand mx-5 text-white"%></div>
+  <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
+
+    <ul class="navbar-nav nav-menu mr-auto py-2 mt-lg-0">   
+    <li  class="nav-item px-2">
+      <a  class="nav-link" href="#"><strong>REGISTER</strong></a>
+    </li> 
+    <li  class="nav-item px-2">
+      <a  class="nav-link" href="#"><strong>FEEDING THE PEOPLE</strong></a>
+    </li>  
+    <li  class="nav-item px-2">
+      <a  class="nav-link" href="#"><strong>BECOME A VOLUNTEER</strong></a>
+    </li>  
+    <li  class="nav-item px-2">
+      <a  class="nav-link" href="#"><strong>TAKE SELF ASSESMENT </strong></a>
+    </li> 
+     <% if user_signed_in? %>
+    <li class="nav-item px-2">
+      <%=link_to "LOG Out", destroy_user_session_path, method: :delete,class:"nav-link store mx-4" %>
+    </li>
+    <% else %>
+    <li class="nav-item px-2"> 
+      <%=link_to "Log In", new_user_session_path,class:"nav-link store mx-2" %>
+    </li> 
+    <% end %>
+  
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <button class="store" href="#">REGISTER AS A STORE</button>
+    </form>
+  </div>
+</nav>
+<h1 class="head">Covid Centers</h1>
+
+</div>

@@ -1,0 +1,48 @@
+
+
+
+<%= form_with(model: covid_center) do |form| %>
+  <% if covid_center.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(covid_center.errors.count, "error") %> prohibited this covid_center from being saved:</h2>
+
+      <ul>
+        <% covid_center.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+  <div class="lead">
+    <div class="field mb-3">
+      <%= form.text_field :district,placeholder:"District" ,class:"form-control" %>
+    </div>
+
+    <div class="field mb-3">
+      <%= form.text_field :hospital ,placeholder:"Hospital",class:"form-control" %>
+    </div>
+
+    <div class="field mb-3">
+      <%= form.text_field :center,placeholder:"Center Type" ,class:"form-control"%>
+    </div>
+
+    <div class="field mb-3 ">
+      <%= form.text_field :helpline,placeholder:"Helpline No.",class:"form-control" %>
+    </div>
+
+    <div class="field mb-3">
+      <%= form.text_field :maplink,placeholder:"Maplnk" ,class:"form-control"%>
+    </div>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit class:"btn btn-outline-primary" %><span class="float-right"><%= link_to 'Back', covid_centers_path ,class:"btn btn-success"%></span>
+
+  </div>
+</div>
+
+
+
+<% end %>
